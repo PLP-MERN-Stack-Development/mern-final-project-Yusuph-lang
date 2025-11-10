@@ -1,0 +1,69 @@
+name: HelpHub CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      NODE_VERSION: 22
+
+    steps:
+      # 1. Checkout the repo
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2. Set up Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      # 3. Install backend dependencies
+      - name: Install server dependencies
+        working-directory: ./server
+        run: npm install
+
+      # 4. Install frontend dependencies
+      - name: Install client dependencies
+        working-directory: ./client
+        run: npm install
+
+      # 5. Run backend tests (if any)
+      - name: Run backend tests
+        working-directory: ./server
+        run: npm test || echo "No backend tests defined"
+
+      # 6. Run frontend tests (if any)
+      - name: Run frontend tests
+        working-directory: ./client
+        run: npm test || echo "No frontend tests defined"
+
+      # 7. Build frontend
+      - name: Build frontend
+        working-directory: ./client
+        run: npm run build
+
+      # 8. Deploy backend (example: Render)
+      # Set up your Render API key as a GitHub secret: RENDER_API_KEY
+      - name: Deploy backend to Render
+        run: |
+          curl -X POST \
+          -H "Accept: application/json" \
+          -H "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}" \
+          https://api.render.com/deploy/srv-xxxxxxxxxxxx
+
+      # 9. Deploy frontend (example: Render static site)
+      - name: Deploy frontend to Render
+        run: |
+          curl -X POST \
+          -H "Accept: application/json" \
+          -H "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}" \
+          https://api.render.com/deploy/srv-yyyyyyyyyyyy

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta Basics -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Title and Favicon -->
+    <title>HelpHub | Connect. Support. Empower.</title>
+    <link rel="icon" type="image/png" href="/helphub-logo.png" />
+
+    <!-- SEO Meta -->
+    <meta
+      name="description"
+      content="HelpHub is a community-driven platform that connects people who need help with those who can offer support — in real time. Empower your community through connection and care."
+    />
+
+    <!-- Fonts & Icons -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+    />
+
+    <!-- App Styling -->
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #f0f4ff, #ffffff);
+        margin: 0;
+        padding: 0;
+        color: #1e293b;
+      }
+
+      #root {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        text-align: center;
+      }
+
+      .loading {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 2rem;
+        max-width: 800px;
+      }
+
+      .loading i {
+        font-size: 2rem;
+        color: #2563eb;
+        animation: spin 1.5s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      h2 {
+        color: #1e3a8a;
+        font-size: 1.8rem;
+        margin-bottom: 0.2rem;
+      }
+
+      p {
+        color: #475569;
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+      }
+
+      .info-section {
+        margin-top: 1rem;
+        max-width: 700px;
+      }
+
+      .info-section h3 {
+        color: #1e40af;
+        margin-bottom: 0.5rem;
+      }
+
+      .socials {
+        display: flex;
+        justify-content: center;
+        gap: 1.2rem;
+        margin-top: 1rem;
+      }
+
+      .socials a {
+        color: #2563eb;
+        font-size: 1.4rem;
+        transition: 0.3s;
+      }
+
+      .socials a:hover {
+        color: #1e3a8a;
+      }
+
+      footer {
+        margin-top: 2rem;
+        font-size: 0.85rem;
+        color: #64748b;
+      }
+
+      /* Buttons Section */
+      .button-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+        margin-top: 1.5rem;
+      }
+
+      .button-group button {
+        background-color: #2563eb;
+        color: white;
+        border: none;
+        padding: 0.8rem 1.5rem;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .button-group button:hover {
+        background-color: #1e40af;
+        transform: translateY(-2px);
+      }
+
+      /* Contact & Form Buttons */
+      .form-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+      }
+
+      .form-buttons a {
+        text-decoration: none;
+      }
+
+      .form-buttons button {
+        background-color: #10b981;
+      }
+
+      .form-buttons button:hover {
+        background-color: #059669;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root">
+      <div class="loading">
+        <i class="fas fa-circle-notch"></i>
+        <h2>Launching HelpHub...</h2>
+        <p>Connecting communities and building support networks 💙</p>
+
+        <!-- Action Buttons -->
+        <div class="button-group">
+          <button onclick="alert('Learn more about HelpHub’s mission and story!')">
+            Learn More
+          </button>
+          <button onclick="alert('Search for opportunities in your area!')">
+            Search Opportunities
+          </button>
+          <button onclick="alert('Post your opportunity to help others!')">
+            Post Opportunity
+          </button>
+          <button onclick="alert('We value your feedback — thank you!')">
+            Feedback
+          </button>
+        </div>
+
+        <!-- Personal Details Form -->
+        <div class="form-buttons">
+          <a href="#details-form">
+            <button>Enter Your Details</button>
+          </a>
+        </div>
+
+        <div class="info-section">
+          <h3>🌟 Our Mission</h3>
+          <p>
+            To create a safe and accessible digital space where individuals and organizations
+            can connect, support, and empower one another in times of need.
+          </p>
+
+          <h3>💡 Our Vision</h3>
+          <p>
+            A world where every community thrives through compassion, collaboration, and real-time connection.
+          </p>
+
+          <h3>📞 Contact Us</h3>
+          <p>
+            Email: <a href="mailto:support@helphub.com">support@helphub.com</a><br />
+            Phone: +254 727797067<br />
+            Location: Nairobi, Kenya
+          </p>
+
+          <div class="socials">
+            <a href="https://facebook.com/helphub" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/helphub" target="_blank"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://instagram.com/helphub" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/company/helphub" target="_blank"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+
+        <footer>
+          <p>© 2025 HelpHub. All rights reserved. | Empowering communities through technology 💙</p>
+        </footer>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
